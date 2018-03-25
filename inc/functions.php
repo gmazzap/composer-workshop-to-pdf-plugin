@@ -261,9 +261,6 @@ function streamPdf()
         do_action('gmazzap_as_pdf_after_pdf_stream', $pre, $post);
     }
 
-    // Autoload file for Dompdf.
-    require_once dirname(__DIR__) . '/dompdf/vendor/autoload.php';
-
     $domPdf = new Dompdf\Dompdf();
     $options = new Dompdf\Options();
     $options->setIsRemoteEnabled(true); // necessary to show images

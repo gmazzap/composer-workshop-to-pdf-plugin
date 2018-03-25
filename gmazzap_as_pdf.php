@@ -46,6 +46,31 @@ function checkPhp($currentVersion)
 }
 
 /**
+ * Load Composer autoloader.
+ */
+function loadComposerAutoload()
+{
+
+    if (class_exists('Dompdf\Dompdf')) {
+        return;
+    }
+
+    if (!file_exists(__DIR__ . '/vendor/autoload.php')
+        || !is_readable(__DIR__ . '/vendor/autoload.php')
+    ) {
+        loadLocale();
+        $message = __(
+            'Composer autoloader not found. Please install the plugin using Composer.',
+            'gmazzap_as_pdf'
+        );
+
+        throw new \RuntimeException($message);
+    }
+
+    require_once __DIR__ . '/vendor/autoload.php';
+}
+
+/**
  * Check if the plugin should be disabled.
  *
  * @return array Two-items array where 1st item is the reason, 2nd item is a boolean that is true
@@ -83,6 +108,7 @@ function onActivation()
     try {
 
         checkPhp(PHP_VERSION);
+        loadComposerAutoload();
 
     } catch (\RuntimeException $exception) {
 
@@ -145,6 +171,7 @@ add_action('wp', function () {
 
     try {
         checkPhp(PHP_VERSION);
+        loadComposerAutoload();
 
         add_action('template_redirect', __NAMESPACE__ . '\\streamPdf');
         add_action('the_post', __NAMESPACE__ . '\\appendDownloadUrl');

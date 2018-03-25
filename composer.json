@@ -1,0 +1,15 @@
+{
+    "name": "gmazzap/composer-workshop-as-pdf",
+    "description": "Sample plugin for Giuseppe Mazzapica's 2018 Composer workshop. Adds a \"Download as PDF\" link at the end of posts.",
+    "type": "wordpress-plugin",
+    "require": {
+        "dompdf/dompdf": "^0.8.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giuseppe Mazzapica",
+            "email": "giuseppe.mazzapica@gmail.com"
+        }
+    ]
+}
