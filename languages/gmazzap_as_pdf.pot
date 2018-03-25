@@ -22,7 +22,11 @@ msgstr ""
 msgid "\"Download as PDF\" requires PHP %s minimum."
 msgstr "\"Download come PDF\" richiede almeno PHP %s."
 
-#: gmazzap_as_pdf.php:95
+#: gmazzap_as_pdf.php:63
+msgid "Composer autoloader not found. Please install the plugin using Composer."
+msgstr "Composer autoloader non trovato. Per favore installare il plugin tramite Composer."
+
+#: gmazzap_as_pdf.php:121
 msgid "\"Download as PDF\" activation failed."
 msgstr "Attivatione di \"Download as PDF\" fallita."
 
