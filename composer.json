@@ -3,7 +3,8 @@
     "description": "Sample plugin for Giuseppe Mazzapica's 2018 Composer workshop. Adds a \"Download as PDF\" link at the end of posts.",
     "type": "wordpress-plugin",
     "require": {
-        "dompdf/dompdf": "^0.8.2"
+        "dompdf/dompdf": "^0.8.2",
+        "composer/installers": "^1"
     },
     "license": "MIT",
     "authors": [
